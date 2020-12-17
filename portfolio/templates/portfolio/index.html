@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{%  extends 'portfolio/base.html' %}
+{%  block content %}
 <h1>Parker's Projects</h1>
-{%  load static %}
-<img src="{% static 'portfolio/parker.jpg' %}" height="50", width="70">
+{% load static %}
+<img src="{% static 'portfolio/parker.jpg' %}" height="50" , width="70">
 <a href="{% static 'portfolio/resume.pdf' %}">Resume</a>
 {% for project in projects %}
     <h2>{{ project.title }}</h2>
@@ -19,6 +14,6 @@
 {% endfor %}
 
 <br>
-<a href="{% url 'blog:all_blogs'  %}">Blogs</a>
-</body>
-</html>
+<a href="{% url 'blog:all_blogs' %}">Blogs</a>
+{% endblock %}
+

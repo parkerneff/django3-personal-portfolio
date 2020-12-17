@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blogs</title>
-</head>
-<body>
-<h1>Parker's Blogs</h1>
-<br>
-<h2>Parker has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h2>
-{% for blog in blogs %}
-    <h2><a href="{% url 'blog:detail' blog.id %}"> {{ blog.title }}</a></h2>
-    <p>{{ blog.create_date|date:'M d Y' }}</p>
-    <p>{{ blog.body|striptags|truncatechars:50 }}</p>
-{% endfor %}
-</body>
-</html>
+{% extends 'portfolio/base.html' %}
+{% block content %}
+    <h1>Parker's Blogs</h1>
+    <br>
+    <h2>Parker has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h2>
+    {% for blog in blogs %}
+        <h2><a href="{% url 'blog:detail' blog.id %}"> {{ blog.title }}</a></h2>
+        <p>{{ blog.create_date|date:'M d Y' }}</p>
+        <p>{{ blog.body|striptags|truncatechars:50 }}</p>
+    {% endfor %}
+{% endblock %}
