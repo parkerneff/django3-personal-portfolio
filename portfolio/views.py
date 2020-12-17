@@ -4,7 +4,7 @@ from django.template import loader
 from .models import Project
 
 
-def index(request):
+def home(request):
     projects = Project.objects.all()
-    template = loader.get_template('portfolio/index.html')
+    template = loader.get_template('portfolio/home.html')
     return HttpResponse(template.render({'projects': projects}, request))
