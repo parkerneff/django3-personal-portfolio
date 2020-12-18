@@ -8,3 +8,7 @@ workon portfolioenv
 deactivate
 ## view virtual envs
 ls ~/.virtualenvs
+## Deployment info
+    /home/parkerneff/django3-personal-portfolio
+    portfolioenv
+    personal_portfolio
